@@ -27,12 +27,45 @@ body {
   transition: background-color 0.2s;
 }
 
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
 .nav ul li:hover {
   background-color: black;
 }
 
+.nav ul li a:hover {
+  color: white;
+}
+
+.cv-table table td ul {
+
+}
+
+.cv-table table td p {
+  font-weight: bold;
+}
+
+.cv-table table thead {
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.cv-table table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+.cv-table table td:first-child {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
 .image-area {
-  background-image:url('images/background.png');
+  background-image:url('images/background.jpeg');
   background-color:black;
   background-position: center center;
   background-size: cover;
@@ -44,6 +77,11 @@ body {
   max-width: 1020px;
   margin: 0px auto;
   padding: 0px 16px;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .image-text {
