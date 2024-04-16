@@ -5,6 +5,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0px;
   margin: 0px;
+  background-color: #f0f0f0;
 }
 
 .nav {
@@ -40,8 +41,8 @@ body {
   color: white;
 }
 
-.cv-table table td ul {
-
+.cv-table table {
+  width: 80%;
 }
 
 .cv-table table td p {
@@ -108,6 +109,39 @@ body {
   padding: 0px 16px;
 }
 
+.contact-main {
+  background-color: #f0f0f0;
+}
+
+.contact {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1, h2 {
+  text-align: center;
+}
+
+.contact form {
+  margin-top: 20px;
+}
+
+.contact label, input, textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.contact input[type="submit"] {
+  width: auto;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 700px) {
   .nav ul {
     text-align: right;
@@ -120,7 +154,7 @@ body {
     text-align: left;
   }
 
-  .single-service {
+  .single-service-home {
     width: 50%;
     float: left;
   }
