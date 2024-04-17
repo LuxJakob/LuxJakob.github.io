@@ -50,6 +50,15 @@ body {
   color: white;
 }
 
+.projects-table table {
+  width: 80%;
+  padding: 0px 16px;
+}
+
+.projects-table table, tr, td {
+  padding: 10px 16px;
+}
+
 .cv-table table {
   width: 80%;
 }
