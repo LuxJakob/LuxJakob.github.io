@@ -4,7 +4,7 @@
     <title>Lebenslauf</title>
     <meta charset="UTF-8" >
     <meta name="description" content="An awesome website with frogs!" >
-    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" href="../images/favicon.ico" >
     <link rel="stylesheet" href="../style.css" >
 </head>
 <body>
@@ -22,10 +22,13 @@
     <table>
         <thead>
         <tr>
-            <th colspan="2">BILDUNGSWEG</th>
+            <th colspan="2">
+                <button onclick="toggleTable('bildungsweg')">&gt;</button>
+                BILDUNGSWEG
+            </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="bildungsweg">
         <tr>
             <td>03/2020 -<br>06/2024</td>
             <td>
@@ -65,10 +68,13 @@
     <table>
         <thead>
         <tr>
-            <th colspan="2">BERUFSERFAHRUNG</th>
+            <th colspan="2">
+                <button onclick="toggleTable('berufserfahrung')">&gt;</button>
+                BERUFSERFAHRUNG
+            </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="berufserfahrung">
         <tr>
             <td>09/2023 -<br>heute</td>
             <td>
@@ -121,10 +127,13 @@
     <table>
         <thead>
         <tr>
-            <th colspan="2">PROGRAMMIERPROJEKTE</th>
+            <th colspan="2">
+                <button onclick="toggleTable('programmierprojekte')">&gt;</button>
+                PROGRAMMIERPROJEKTE
+            </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="programmierprojekte">
         <tr>
             <td>2024</td>
             <td>
@@ -219,10 +228,13 @@
     <table>
         <thead>
         <tr>
-            <th colspan="2">SKILLS &amp; KOMPETENZEN</th>
+            <th colspan="2">
+                <button onclick="toggleTable('skills')">&gt;</button>
+                SKILLS &amp; KOMPETENZEN
+            </th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="skills">
         <tr>
             <td><br>Sprachen</td>
             <td><br>Deutsch (Muttersprache), Englisch (fließend)</td>
@@ -239,5 +251,6 @@
     </table>
 </div>
 <br><br>
+<script src="../scripts/table-toggle.js"></script>
 </body>
 </html>

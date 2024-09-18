@@ -83,6 +83,10 @@ body {
   max-width: 100px;
 }
 
+table tbody {
+    transition: all 0.3s ease;
+}
+
 .image-area {
   background-image:url('images/background.jpeg');
   background-color:black;
