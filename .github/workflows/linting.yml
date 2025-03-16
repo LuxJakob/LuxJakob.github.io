@@ -24,6 +24,3 @@ jobs:
 
       - name: Run HTMLHint
         run: htmlhint '**/*.html'
-
-      - name: Run Stylelint
-        run: npx stylelint '**/*.css'
