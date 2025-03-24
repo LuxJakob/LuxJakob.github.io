@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
             alert("Message triggered successfully!");
         } else {
-            alert("Error triggering message.");
+            alert("Diese Funktion ist auf einer Single-Page Website leider nicht verfügbar.");
         }
     });
 });
