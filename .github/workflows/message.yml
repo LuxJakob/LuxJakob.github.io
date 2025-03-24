@@ -1,0 +1,23 @@
+name: Process Contact Form
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name of sender'
+        required: true
+      email:
+        description: 'Sender email'
+        required: true
+      message:
+        description: 'Message content'
+        required: true
+
+jobs:
+  process-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log form data
+        run: |
+          echo "New message from: ${{ github.event.inputs.name }} (${{ github.event.inputs.email }})"
+          echo "Message: ${{ github.event.inputs.message }}"
