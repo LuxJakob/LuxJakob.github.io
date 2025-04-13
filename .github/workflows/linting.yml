@@ -23,4 +23,4 @@ jobs:
         run: npm install stylelint stylelint-config-standard --save-dev
 
       - name: Run HTMLHint
-        run: htmlhint '**/*.html'
+        run: htmlhint '**/*.html' --config .htmlhintrc
