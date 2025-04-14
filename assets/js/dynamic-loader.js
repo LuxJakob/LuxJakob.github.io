@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    // Preload all sections at once
     const sections = ['resume', 'skills', 'projects', 'contact'];
     const preloadPromises = sections.map(section =>
         fetch(`sections/${section}.html`)
@@ -9,12 +8,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     const loadedSections = await Promise.all(preloadPromises);
 
-    // Store sections in memory
     sections.forEach((section, index) => {
         if (loadedSections[index]) {
             document.getElementById(section).innerHTML = loadedSections[index];
 
-            // Initialize skill matrix if this is the skills section
             if (section === 'skills') {
                 initializeSkillMatrix();
             }
@@ -33,55 +30,53 @@ document.addEventListener('DOMContentLoaded', async function() {
 function initializeSkillMatrix() {
     const skillCategories = [
         {
-            title: "Programming Languages",
+            title: "Programming & Scripting",
             skills: [
-                { name: "Python", level: 4 },
+                { name: "Python", level: 5 },
                 { name: "C#", level: 5 },
-                { name: "Java/Groovy", level: 2 },
-                { name: "TypeScript", level: 1 },
-                { name: "HTML/CSS", level: 2 }
+                { name: "Bash/Shell", level: 5 },
+                { name: "Java/Groovy", level: 3 },
+                { name: "HTML/CSS", level: 2 },
+                { name: "COBOL", level: 2 },
+                { name: "JavaScript", level: 1 }
             ]
         },
         {
-            title: "DevOps & CI/CD",
-            skills: [
-                { name: "Jenkins", level: 5 },
-                { name: "Kubernetes", level: 1 },
-                { name: "Helm", level: 2 },
-                { name: "Docker", level: 3 },
-                { name: "AWS", level: 1 }
-            ]
-        },
-        {
-            title: "Databases",
-            skills: [
-                { name: "DBeaver", level: 5 },
-                { name: "PostgreSQL", level: 5 },
-                { name: "SQL", level: 5 }
-            ]
-        },
-        {
-            title: "Linux & SysAdmin",
+            title: "System Administration & Platforms",
             skills: [
                 { name: "Linux/Ubuntu", level: 5 },
-                { name: "Bash/Shell", level: 5 }
+                { name: "IntelliJ IDEA", level: 4 },
+                { name: "Visual Studio Code", level: 4 }
             ]
         },
         {
-            title: "Tools & Platforms",
+            title: "DevOps & Automation",
             skills: [
                 { name: "Git", level: 5 },
-                { name: "Grafana", level: 2 },
-                { name: "JFrog Artifactory", level: 3 },
-                { name: "SonarQube", level: 4 }
+                { name: "Jenkins", level: 5 },
+                { name: "SonarQube", level: 4 },
+                { name: "Docker", level: 3 },
+                { name: "Infrastructure as Code (IaC)", level: 2 },
+                { name: "Kubernetes", level: 1 },
+                { name: "AWS", level: 1 },
             ]
         },
         {
-            title: "Soft Skills",
+            title: "Databases & Querying",
             skills: [
-                { name: "Teamwork (Scrum/DevOps)", level: 4 },
+                { name: "SQL", level: 5 },
+                { name: "PostgreSQL", level: 5 },
+                { name: "DBeaver", level: 5 }
+            ]
+        },
+        {
+            title: "Methodologies & Soft Skills",
+            skills: [
+                { name: "DORA Metrics", level: 5 },
+                { name: "Agil (Scrum/DevOps)", level: 4 },
+                { name: "Kommunikation", level: 4 },
                 { name: "Problem-Solving", level: 4 },
-                { name: "Communication", level: 5 }
+                { name: "Englisch", level: 4 }
             ]
         }
     ];
@@ -98,12 +93,14 @@ function initializeSkillMatrix() {
     const container = document.getElementById('skillTablesContainer');
 
     skillCategories.forEach(category => {
-        // Create category heading
-        const heading = document.createElement('h3');
-        heading.textContent = category.title;
-        container.appendChild(heading);
+        const details = document.createElement('details');
+        details.className = 'skill-category';
+        details.open = true;
 
-        // Create table
+        const summary = document.createElement('summary');
+        summary.className = 'skill-category-header';
+        summary.innerHTML = `${category.title}<span class="icon chevron"></span>`;
+
         const tableWrapper = document.createElement('div');
         tableWrapper.className = 'table-wrapper';
 
@@ -132,6 +129,9 @@ function initializeSkillMatrix() {
         table.appendChild(thead);
         table.appendChild(tbody);
         tableWrapper.appendChild(table);
-        container.appendChild(tableWrapper);
+
+        details.appendChild(summary);
+        details.appendChild(tableWrapper);
+        container.appendChild(details);
     });
 }

@@ -50,6 +50,18 @@ table {
 	border-spacing: 0;
 }
 
+.skill-table {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.skill-table td:first-child,
+.skill-table th:first-child {
+	width: 250px;
+	min-width: 250px;
+	max-width: 250px;
+}
+
 body {
 	-webkit-text-size-adjust: none;
 }

@@ -1,4 +1,3 @@
-// Wait for the main.js navigation to complete
 document.addEventListener('navigationComplete', function() {
     if (window.location.hash === '#contact') {
         setTimeout(function() {
