@@ -30,42 +30,60 @@ document.addEventListener('DOMContentLoaded', async function() {
     });
 });
 
-// Skill matrix initialization function
 function initializeSkillMatrix() {
-    const skills = [
-        // Programming Languages
-        { name: "Python", level: 4 },
-        { name: "C#", level: 5 },
-        { name: "Java/Groovy", level: 2 },
-        { name: "TypeScript", level: 1 },
-        { name: "HTML/CSS", level: 2 },
-
-        // DevOps & CI/CD
-        { name: "Jenkins", level: 5 },
-        { name: "Kubernetes", level: 1 },
-        { name: "Helm", level: 2 },
-        { name: "Docker", level: 3 },
-        { name: "AWS", level: 1 },
-
-        // Databases
-        { name: "DBeaver", level: 5 },
-        { name: "PostgreSQL", level: 5 },
-        { name: "SQL", level: 5 },
-
-        // Linux & SysAdmin
-        { name: "Linux/Ubuntu", level: 5 },
-        { name: "Bash/Shell", level: 5 },
-
-        // Tools & Platforms
-        { name: "Git", level: 5 },
-        { name: "Grafana", level: 2 },
-        { name: "JFrog Artifactory", level: 3 },
-        { name: "SonarQube", level: 4 },
-
-        // Soft Skills
-        { name: "Teamwork (Scrum/DevOps)", level: 4 },
-        { name: "Problem-Solving", level: 4 },
-        { name: "Communication", level: 5 },
+    const skillCategories = [
+        {
+            title: "Programming Languages",
+            skills: [
+                { name: "Python", level: 4 },
+                { name: "C#", level: 5 },
+                { name: "Java/Groovy", level: 2 },
+                { name: "TypeScript", level: 1 },
+                { name: "HTML/CSS", level: 2 }
+            ]
+        },
+        {
+            title: "DevOps & CI/CD",
+            skills: [
+                { name: "Jenkins", level: 5 },
+                { name: "Kubernetes", level: 1 },
+                { name: "Helm", level: 2 },
+                { name: "Docker", level: 3 },
+                { name: "AWS", level: 1 }
+            ]
+        },
+        {
+            title: "Databases",
+            skills: [
+                { name: "DBeaver", level: 5 },
+                { name: "PostgreSQL", level: 5 },
+                { name: "SQL", level: 5 }
+            ]
+        },
+        {
+            title: "Linux & SysAdmin",
+            skills: [
+                { name: "Linux/Ubuntu", level: 5 },
+                { name: "Bash/Shell", level: 5 }
+            ]
+        },
+        {
+            title: "Tools & Platforms",
+            skills: [
+                { name: "Git", level: 5 },
+                { name: "Grafana", level: 2 },
+                { name: "JFrog Artifactory", level: 3 },
+                { name: "SonarQube", level: 4 }
+            ]
+        },
+        {
+            title: "Soft Skills",
+            skills: [
+                { name: "Teamwork (Scrum/DevOps)", level: 4 },
+                { name: "Problem-Solving", level: 4 },
+                { name: "Communication", level: 5 }
+            ]
+        }
     ];
 
     function generateStars(level) {
@@ -77,15 +95,43 @@ function initializeSkillMatrix() {
         return stars;
     }
 
-    const tableBody = document.querySelector('#skillTable tbody');
-    if (tableBody) {
-        skills.forEach(skill => {
+    const container = document.getElementById('skillTablesContainer');
+
+    skillCategories.forEach(category => {
+        // Create category heading
+        const heading = document.createElement('h3');
+        heading.textContent = category.title;
+        container.appendChild(heading);
+
+        // Create table
+        const tableWrapper = document.createElement('div');
+        tableWrapper.className = 'table-wrapper';
+
+        const table = document.createElement('table');
+        table.className = 'skill-table';
+
+        const thead = document.createElement('thead');
+        thead.innerHTML = `
+            <tr>
+                <th>Skill</th>
+                <th>Proficiency</th>
+            </tr>
+        `;
+
+        const tbody = document.createElement('tbody');
+
+        category.skills.forEach(skill => {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${skill.name}</td>
                 <td>${generateStars(skill.level)}</td>
             `;
-            tableBody.appendChild(row);
+            tbody.appendChild(row);
         });
-    }
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        tableWrapper.appendChild(table);
+        container.appendChild(tableWrapper);
+    });
 }
