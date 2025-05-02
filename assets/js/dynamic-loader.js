@@ -38,8 +38,9 @@ function initializeSkillMatrix() {
                 { name: "Python", level: 5 },
                 { name: "C#", level: 5 },
                 { name: "Bash/Shell", level: 5 },
+                { name: "HTML/CSS", level: 4 },
                 { name: "Java/Groovy", level: 3 },
-                { name: "HTML/CSS", level: 2 },
+                { name: "FORTRAN", level: 2 },
                 { name: "COBOL", level: 2 },
                 { name: "JavaScript", level: 1 }
             ]
@@ -49,7 +50,8 @@ function initializeSkillMatrix() {
             skills: [
                 { name: "Linux/Ubuntu", level: 5 },
                 { name: "IntelliJ IDEA", level: 4 },
-                { name: "Visual Studio Code", level: 4 }
+                { name: "Visual Studio Code", level: 4 },
+                { name: "Visual Studio", level: 3 }
             ]
         },
         {
