@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (section === 'skills') {
                 initializeSkillMatrix();
             }
+            else if (section === 'resume') {
+                initializeImageExpander();
+            }
         }
     });
 
@@ -134,4 +137,42 @@ function initializeSkillMatrix() {
         details.appendChild(tableWrapper);
         container.appendChild(details);
     });
+}
+
+function initializeImageExpander() {
+    setTimeout(() => {
+        const profileImage = document.querySelector('#resume .image.main img');
+        if (!profileImage) return;
+
+        const originalWidth = profileImage.style.width || '25%';
+        let isExpanded = false;
+
+        profileImage.style.cursor = 'pointer';
+
+        profileImage.addEventListener('click', function(e) {
+            e.stopPropagation();
+
+            if (isExpanded) {
+                profileImage.style.width = originalWidth;
+            } else {
+                profileImage.style.width = '100%';
+            }
+
+            isExpanded = !isExpanded;
+        });
+
+        document.addEventListener('click', function() {
+            if (isExpanded) {
+                profileImage.style.width = originalWidth;
+                isExpanded = false;
+            }
+        });
+
+        const imageContainer = document.querySelector('#resume .image.main');
+        if (imageContainer) {
+            imageContainer.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    }, 100);
 }
