@@ -39,6 +39,7 @@ function initializeSkillMatrix() {
                 { name: "C#", level: 5 },
                 { name: "Bash/Shell", level: 5 },
                 { name: "HTML/CSS", level: 4 },
+                { name: "Visual Basic", level: 3 },
                 { name: "Java/Groovy", level: 3 },
                 { name: "FORTRAN", level: 2 },
                 { name: "COBOL", level: 2 },
@@ -61,9 +62,9 @@ function initializeSkillMatrix() {
                 { name: "Jenkins", level: 5 },
                 { name: "SonarQube", level: 4 },
                 { name: "Docker", level: 3 },
+                { name: "AWS", level: 3 },
                 { name: "Infrastructure as Code (IaC)", level: 2 },
                 { name: "Kubernetes", level: 1 },
-                { name: "AWS", level: 1 },
             ]
         },
         {
@@ -71,7 +72,8 @@ function initializeSkillMatrix() {
             skills: [
                 { name: "SQL", level: 5 },
                 { name: "PostgreSQL", level: 5 },
-                { name: "DBeaver", level: 5 }
+                { name: "DBeaver", level: 5 },
+                { name: "Grafana", level: 3 }
             ]
         },
         {
