@@ -50,6 +50,7 @@ function initializeSkillMatrix() {
             title: "System Administration & Platforms",
             skills: [
                 { name: "Linux/Ubuntu", level: 5 },
+                { name: "Windows 10/11", level: 5 },
                 { name: "IntelliJ IDEA", level: 4 },
                 { name: "Visual Studio Code", level: 4 },
                 { name: "Visual Studio", level: 3 }
@@ -59,11 +60,12 @@ function initializeSkillMatrix() {
             title: "DevOps & Automation",
             skills: [
                 { name: "Git", level: 5 },
-                { name: "Jenkins", level: 5 },
+                { name: "GitHub Actions", level: 5 },
+                { name: "Jenkins", level: 4 },
                 { name: "SonarQube", level: 4 },
                 { name: "Docker", level: 3 },
                 { name: "AWS", level: 3 },
-                { name: "Infrastructure as Code (IaC)", level: 2 },
+                { name: "Configuration as Code (CaC)", level: 2 },
                 { name: "Kubernetes", level: 1 },
             ]
         },
@@ -73,7 +75,8 @@ function initializeSkillMatrix() {
                 { name: "SQL", level: 5 },
                 { name: "PostgreSQL", level: 5 },
                 { name: "DBeaver", level: 5 },
-                { name: "Grafana", level: 3 }
+                { name: "Grafana", level: 3 },
+                { name: "Amazon DynamoDB", level: 3 }
             ]
         },
         {
@@ -81,6 +84,7 @@ function initializeSkillMatrix() {
             skills: [
                 { name: "DORA Metrics", level: 5 },
                 { name: "Agil (Scrum/DevOps)", level: 4 },
+                { name: "Clean Code", level: 4 },
                 { name: "Kommunikation", level: 4 },
                 { name: "Problem-Solving", level: 4 },
                 { name: "Englisch", level: 4 }
